@@ -140,6 +140,48 @@ aws-cloud-labs/
 │   └── open_source_tools/
 └── security-projects/                        # (planned)
 ```
+## AWS + Terraform Track
+
+Terraform is the next layer of this repository — first build AWS services manually to understand what you're automating, then codify with Infrastructure as Code.
+
+### Progression
+
+1. **Manual AWS fundamentals** — IAM, EC2, S3, VPC, RDS, Route 53, Security Groups, Load Balancers
+2. **Terraform core** — `provider`, `resource`, `variable`, `output`, `locals`, `data`, `module`
+3. **Intermediate infrastructure** — production VPC, ALB + Auto Scaling, RDS
+4. **Professional Terraform** — remote state, S3 backend, DynamoDB locking, reusable modules
+5. **CI/CD** — GitHub Actions for `terraform fmt`, `terraform validate`, and `terraform plan` on every pull request
+
+### Planned Terraform Labs
+
+| Project | Terraform Creates | Purpose |
+|---|---|---|
+| **01 — Single EC2 Instance** | EC2 · Security Group · Elastic IP | Provider, resource, variables, outputs |
+| **02 — Static Website** | S3 bucket · bucket policy · static website hosting | Object storage, policies, hosting config |
+| **03 — Production VPC** | VPC · public/private subnets · IGW · NAT Gateway · route tables | Networking depth |
+| **04 — Web Application Stack** | VPC · EC2 · ALB · Auto Scaling Group · Security Groups | Production-style web tier |
+| **05 — Database Infrastructure** | RDS PostgreSQL · private subnet group · secrets storage | Persistent data layer with secure placement |
+
+### Target Structure
+
+```text
+terraform/
+├── labs/
+│   ├── 01-ec2-eip/
+│   ├── 02-s3-static-website/
+│   ├── 03-production-vpc/
+│   ├── 04-alb-asg-web-stack/
+│   └── 05-rds-postgres/
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   ├── alb/
+│   └── rds/
+└── environments/
+    ├── dev/
+    ├── test/
+    └── prod/
+```
 
 > Project pages are automatically synced to [oumoeurtmm-code.github.io](https://oumoeurtmm-code.github.io) via GitHub Actions on every push.
 
